@@ -18,7 +18,7 @@ public class RecursivePractice {
         int matches = 0;
         if (x % 10 == y % 10) {
             matches = 1;
-        }h
+        }
         if (x < 10 || y < 10) {
             return matches;
         }
@@ -27,22 +27,25 @@ public class RecursivePractice {
     // multiplyOdds() - Given an integer n, return the product of the first n odd integers.
 
     public static int multiplyOdds(int n) {
-        if (n <= 0) {h
+        if (n <= 0) {
             throw new IllegalArgumentException();
         }
-        int digit = n % 10;
-        if(n < 10){
-            if(digit % 2 == 0){
-                return 1;
-            }else{
-                return digit;
-            }
-        }
-        if(digit % 2 != 0){
-            return digit * multiplyOdds(n / 10);
+        if (n == 1) {
+            return 1;
         }else{
-            return multiplyOdds(n / 10);
+            return (2 * n - 1) * multiplyOdds(n - 1);
         }
+    }
+    // permutation() - Given two integers n and r, compute the number of unique permutations of r items from a group of n items.
+
+    public static double permutation(int n, int r) {
+        if (n < 0 || r < 0 || n < r) {
+            throw new IllegalArgumentException();
         }
+        if (r == 0) {
+            return 1;
+        }
+        return n * permutation(n - 1, r - 1);
+    }
 
 }
