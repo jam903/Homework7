@@ -27,7 +27,7 @@ public class RecursivePractice {
     // multiplyOdds() - Given an integer n, return the product of the first n odd integers.
 
     public static int multiplyOdds(int n) {
-        if (n <= 0) {
+        if (n <= 0) {h
             throw new IllegalArgumentException();
         }
         int digit = n % 10;
